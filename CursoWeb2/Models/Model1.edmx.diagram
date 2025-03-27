@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="65091c5b580c452bb96e365ca3d1030d" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="DBCARRITOModel.CATEGORIA" Width="1.5" PointX="5" PointY="10.5" />
+        <EntityTypeShape EntityType="DBCARRITOModel.CLIENTE" Width="1.5" PointX="5" PointY="5.125" />
+        <EntityTypeShape EntityType="DBCARRITOModel.DEPARTAMENTO" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="DBCARRITOModel.DETALLE_VENTA" Width="1.5" PointX="9.5" PointY="5.375" />
+        <EntityTypeShape EntityType="DBCARRITOModel.DISTRITO" Width="1.5" PointX="0.75" PointY="6.875" />
+        <EntityTypeShape EntityType="DBCARRITOModel.PROVINCIA" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="DBCARRITOModel.UBICACION" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="DBCARRITOModel.USUARIO" Width="1.5" PointX="2.75" PointY="5.125" />
+        <EntityTypeShape EntityType="DBCARRITOModel.VENTA" Width="1.5" PointX="7.25" PointY="5" />
+        <AssociationConnector Association="DBCARRITOModel.FK__CLIENTE__IdUsuar__6754599E" />
+        <AssociationConnector Association="DBCARRITOModel.FK__VENTA__IdCliente__7D439ABD" />
+        <AssociationConnector Association="DBCARRITOModel.FK__UBICACION__IdDep__76969D2E" />
+        <AssociationConnector Association="DBCARRITOModel.FK__DETALLE_V__IdVen__01142BA1" />
+        <AssociationConnector Association="DBCARRITOModel.FK__UBICACION__IdDis__778AC167" />
+        <AssociationConnector Association="DBCARRITOModel.FK__UBICACION__IdPro__75A278F5" />
+        <EntityTypeShape EntityType="DBCARRITOModel.CARRITO" Width="1.5" PointX="9.5" PointY="9.25" />
+        <AssociationConnector Association="DBCARRITOModel.FK__CARRITO__IdClien__04E4BC85" />
+        <EntityTypeShape EntityType="DBCARRITOModel.PRODUCTO" Width="1.5" PointX="7.25" PointY="9.625" />
+        <AssociationConnector Association="DBCARRITOModel.FK__CARRITO__IdProdu__05D8E0BE" />
+        <AssociationConnector Association="DBCARRITOModel.FK__PRODUCTO__IdCate__4D94879B" />
+        <AssociationConnector Association="DBCARRITOModel.FK__DETALLE_V__IdPro__02084FDA" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

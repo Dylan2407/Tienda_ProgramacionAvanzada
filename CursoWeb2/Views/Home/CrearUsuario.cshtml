@@ -1,0 +1,109 @@
+﻿@model CursoWeb2.Models.USUARIO
+@{
+    ViewBag.Title = "CrearUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("CrearUsuario", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.Correo, "Correo", htmlAttributes: new
+                                    {
+                                        @class = "control-label",@*@style = "color:black"*@})
+                                    <div class="input-group">
+                                        <div class="input-group-addon"></div>
+                                        @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Ingrese su correo" } })
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.Contraseña, "Contraseña", htmlAttributes: new
+                                    {
+                                        @class = "control-label",@*@style = "color:black"*@})
+                                    <div class="input-group">
+                                        <div class="input-group-addon show-password"><span class="glyphicon glyphicon-eye-open"></span></div>
+                                        @Html.EditorFor(model => model.Contraseña, new { htmlAttributes = new { @class = "form-control password", required = "required", placeholder = "Ingrese su contraseña" } })
+                                    </div>
+
+                                    <span style="color:gray">contraseña máximo 10 caracteres</span>
+
+
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.Nombre, "Nombre", htmlAttributes: new
+                                    {
+                                        @class = "control-label",@*@style = "color:black"*@})
+                                    @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+
+                                </div>
+                                <div class="form-group">
+
+
+                                    @Html.LabelFor(model => model.Apellido, "Apellido", htmlAttributes: new
+                                    {
+                                        @class = "control-label",@*@style = "color:black"*@})
+                                    @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+
+                                </div>
+
+                                <div class="form-group mb-2">
+
+
+                                    @Html.LabelFor(model => model.Activo, "Activo", htmlAttributes: new
+                                    {
+                                        @class = "control-label",@*@style = "color:black"*@})
+                                    @Html.EditorFor(model => model.Activo, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="panel-footer mb-4">
+                            <input type="submit" name="Crear Usuario" class="btn btn-success ms-3" value="Crear Usuario" class="btn btn-block btn-default center-block" style="float:none" />
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <style>
+    /* Aplica la imagen de fondo a la página */
+        body {
+            background-image: url('https://img.freepik.com/fotos-premium/hall-centro-comercial-compre-equipos-digitales-electronicos-venta-laptops_497171-106.jpg?w=1380');
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            background-position: center center; /* Centra la imagen */
+            background-attachment: fixed; /* Fija la imagen para que no se desplace */
+        }
+</style>
+
+
+
+
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.u_imagen, "Imagen", new { @class = "control-label" })
+            <input class="form-control" accept="image/*" type="file" name="file" multiple />
+        </div>*@
+
+    @*<div class="panel-footer">
+        <input type="submit" name="Crear Usuario" class="btn btn-success ms-2" value="Crear Usuario" class="btn btn-block btn-default center-block" style="float:none" />
+    </div>*@
+    
+    
+}

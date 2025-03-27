@@ -1,0 +1,70 @@
+﻿@model List<CursoWeb2.Models.USUARIO>
+@using System.Data
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Resumen</a></li>
+    <li class="breadcrumb-item active">Usuarios</li>
+</ol>
+
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-users me-"></i> Lista de Usuarios
+    </div>
+
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-12">
+                <a href="@Url.Action("CrearUsuario", "Home")" class="btn btn-success">Crear Usuario</a>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table id="usuariosTable" class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Activo</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        int index = 1;
+                        foreach (var vUsuario in Model)
+                        {
+                            <tr>
+                                <th scope="row">@index</th>
+                                <td>@vUsuario.Nombre</td>
+                                <td>@vUsuario.Apellido</td>
+                                <td>@vUsuario.Correo</td>
+                                <td>@vUsuario.Activo</td>
+                                <td>
+                                    <a href="@Url.Action("EditarUsuario", "Home", new { id = vUsuario.IdUsuario })" class="btn btn-primary btn-sm"><i class="fa fa-pen"></i></a>
+                                    <a href="@Url.Action("EliminarUsuario", "Home", new { id = vUsuario.IdUsuario })" class="btn btn-danger btn-sm ms-2"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            index++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center">No hay usuarios registrados.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

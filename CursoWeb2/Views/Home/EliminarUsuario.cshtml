@@ -1,0 +1,22 @@
+﻿@model CursoWeb2.Models.USUARIO
+@{
+    ViewBag.Title = "Eliminar Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>¿Estás seguro de eliminar el usuario?</h2>
+
+<div>
+    <p><strong>Nombre:</strong> @Model.Nombre @Model.Apellido</p>
+    <p><strong>Correo:</strong> @Model.Correo</p>
+</div>
+
+@using (Html.BeginForm("EliminarUsuario", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.IdUsuario)
+
+    <div>
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a href="@Url.Action("Usuarios", "Home")" class="btn btn-secondary">Cancelar</a>
+    </div>
+}

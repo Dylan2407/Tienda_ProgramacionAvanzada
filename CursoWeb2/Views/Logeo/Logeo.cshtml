@@ -1,0 +1,95 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model CursoWeb2.Models.Login
+
+<br />
+
+@using (Html.BeginForm())
+{
+    <br />
+    <main class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h3 class="text-center font-weight-light my-3">Login</h3></div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group mb-3">
+                                    @Html.LabelFor(model => model.Correo, "Correo", htmlAttributes: new { @class = "control-label" })
+                                    <div class="input-group">
+                                        <div class="input-group-addon"></div>
+                                        @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Ingrese su correo" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Contraseña, "Contraseña", htmlAttributes: new { @class = "control-label" })
+                                    <div class="input-group">
+                                        <div class="input-group-addon show-password"><span class="glyphicon glyphicon-eye-open"></span></div>
+                                        @Html.EditorFor(model => model.Contraseña, new { htmlAttributes = new { @class = "form-control password1", required = "required", placeholder = "Ingrese su contraseña" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Recordar, "Recordar", htmlAttributes: new { @class = "control-label" })
+                                    @Html.CheckBoxFor(model => model.Recordar, new { htmlAttributes = new { @class = "form-control", @type = "checkbox", required = "required" } })
+                                </div>
+                                <div class="panel-footer text-center">
+
+                                    <div class="form-group mb-3">
+                                        <div class="">
+                                            <input type="submit" name="Entrar" value="Entrar" class="btn btn-primary w-100" />
+                                            @*<input id="login" type="button"  value="Registrarse" class="btn btn-primary" onclick="location.href = '@Url.Action("Create","registroClientes")'" />*@
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-center py-3">
+                            <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<br />
+<br />
+
+
+
+@**<script type="text/javascript">
+    window.addEventListener("load", function () {
+
+        // icono para mostrar contraseña
+        showPassword = document.querySelector('.show-password');
+        showPassword.addEventListener('click', () => {
+
+            // elementos input de tipo clave
+            password1 = document.querySelector('.password1');
+
+            if (password1.type === "text") {
+                password1.type = "password";
+                showPassword.classList.remove('glyphicon glyphicon-eye-close');
+            } else {
+                password1.type = "text"
+                showPassword.classList.toggle("glyphicon glyphicon-eye-close");
+            }
+
+        })
+
+    });
+</script>*@
+ <style>
+     /* Aplica la imagen de fondo a la página */
+     body {
+         background-image: url('https://img.freepik.com/fotos-premium/almacen-departamentos-electronico-fondo-borroso-bokeh_926199-4388069.jpg?w=1380');
+         background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+         background-position: center center; /* Centra la imagen */
+         background-attachment: fixed; /* Fija la imagen para que no se desplace */
+     }
+ </style>

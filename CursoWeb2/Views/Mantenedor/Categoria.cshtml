@@ -1,0 +1,15 @@
+﻿@model List<CursoWeb2.Models.CATEGORIA>
+@{ 
+
+    ViewBag.Title = "Categoria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categori</h2>
+<div class=" container">
+    @foreach(var vCategoria in Model)
+            {
+                <h3>@vCategoria.Descripcion</h3>
+            }
+</div>
+
