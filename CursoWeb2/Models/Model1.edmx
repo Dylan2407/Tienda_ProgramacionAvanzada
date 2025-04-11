@@ -75,6 +75,7 @@
           <Property Name="NombreImagen" Type="varchar" MaxLength="100" />
           <Property Name="Activo" Type="bit" />
           <Property Name="FechaRegistro" Type="datetime" />
+          <Property Name="Imagen" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="PROVINCIA">
           <Key>
@@ -120,7 +121,7 @@
           <Property Name="IdUbicacion" Type="varchar" MaxLength="500" />
           <Property Name="FechaVenta" Type="datetime" />
         </EntityType>
-        <Association Name="FK__CARRITO__IdClien__04E4BC85">
+        <Association Name="FK__CARRITO__IdClien__5FB337D6">
           <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -134,7 +135,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CARRITO__IdProdu__05D8E0BE">
+        <Association Name="FK__CARRITO__IdProdu__60A75C0F">
           <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -148,7 +149,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CLIENTE__IdUsuar__6754599E">
+        <Association Name="FK__CLIENTE__IdUsuar__5AEE82B9">
           <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -162,7 +163,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DETALLE_V__IdPro__02084FDA">
+        <Association Name="FK__DETALLE_V__IdPro__68487DD7">
           <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -176,7 +177,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DETALLE_V__IdVen__01142BA1">
+        <Association Name="FK__DETALLE_V__IdVen__6754599E">
           <End Role="VENTA" Type="Self.VENTA" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -204,7 +205,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UBICACION__IdDep__76969D2E">
+        <Association Name="FK__UBICACION__IdDep__71D1E811">
           <End Role="DEPARTAMENTO" Type="Self.DEPARTAMENTO" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -218,7 +219,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UBICACION__IdDis__778AC167">
+        <Association Name="FK__UBICACION__IdDis__72C60C4A">
           <End Role="DISTRITO" Type="Self.DISTRITO" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -232,7 +233,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UBICACION__IdPro__75A278F5">
+        <Association Name="FK__UBICACION__IdPro__70DDC3D8">
           <End Role="PROVINCIA" Type="Self.PROVINCIA" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -246,7 +247,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VENTA__IdCliente__7D439ABD">
+        <Association Name="FK__VENTA__IdCliente__6383C8BA">
           <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -272,23 +273,23 @@
           <EntitySet Name="UBICACION" EntityType="Self.UBICACION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VENTA" EntityType="Self.VENTA" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__CARRITO__IdClien__04E4BC85" Association="Self.FK__CARRITO__IdClien__04E4BC85">
+          <AssociationSet Name="FK__CARRITO__IdClien__5FB337D6" Association="Self.FK__CARRITO__IdClien__5FB337D6">
             <End Role="CLIENTE" EntitySet="CLIENTE" />
             <End Role="CARRITO" EntitySet="CARRITO" />
           </AssociationSet>
-          <AssociationSet Name="FK__CARRITO__IdProdu__05D8E0BE" Association="Self.FK__CARRITO__IdProdu__05D8E0BE">
+          <AssociationSet Name="FK__CARRITO__IdProdu__60A75C0F" Association="Self.FK__CARRITO__IdProdu__60A75C0F">
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
             <End Role="CARRITO" EntitySet="CARRITO" />
           </AssociationSet>
-          <AssociationSet Name="FK__CLIENTE__IdUsuar__6754599E" Association="Self.FK__CLIENTE__IdUsuar__6754599E">
+          <AssociationSet Name="FK__CLIENTE__IdUsuar__5AEE82B9" Association="Self.FK__CLIENTE__IdUsuar__5AEE82B9">
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="CLIENTE" EntitySet="CLIENTE" />
           </AssociationSet>
-          <AssociationSet Name="FK__DETALLE_V__IdPro__02084FDA" Association="Self.FK__DETALLE_V__IdPro__02084FDA">
+          <AssociationSet Name="FK__DETALLE_V__IdPro__68487DD7" Association="Self.FK__DETALLE_V__IdPro__68487DD7">
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
             <End Role="DETALLE_VENTA" EntitySet="DETALLE_VENTA" />
           </AssociationSet>
-          <AssociationSet Name="FK__DETALLE_V__IdVen__01142BA1" Association="Self.FK__DETALLE_V__IdVen__01142BA1">
+          <AssociationSet Name="FK__DETALLE_V__IdVen__6754599E" Association="Self.FK__DETALLE_V__IdVen__6754599E">
             <End Role="VENTA" EntitySet="VENTA" />
             <End Role="DETALLE_VENTA" EntitySet="DETALLE_VENTA" />
           </AssociationSet>
@@ -296,19 +297,19 @@
             <End Role="CATEGORIA" EntitySet="CATEGORIA" />
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
           </AssociationSet>
-          <AssociationSet Name="FK__UBICACION__IdDep__76969D2E" Association="Self.FK__UBICACION__IdDep__76969D2E">
+          <AssociationSet Name="FK__UBICACION__IdDep__71D1E811" Association="Self.FK__UBICACION__IdDep__71D1E811">
             <End Role="DEPARTAMENTO" EntitySet="DEPARTAMENTO" />
             <End Role="UBICACION" EntitySet="UBICACION" />
           </AssociationSet>
-          <AssociationSet Name="FK__UBICACION__IdDis__778AC167" Association="Self.FK__UBICACION__IdDis__778AC167">
+          <AssociationSet Name="FK__UBICACION__IdDis__72C60C4A" Association="Self.FK__UBICACION__IdDis__72C60C4A">
             <End Role="DISTRITO" EntitySet="DISTRITO" />
             <End Role="UBICACION" EntitySet="UBICACION" />
           </AssociationSet>
-          <AssociationSet Name="FK__UBICACION__IdPro__75A278F5" Association="Self.FK__UBICACION__IdPro__75A278F5">
+          <AssociationSet Name="FK__UBICACION__IdPro__70DDC3D8" Association="Self.FK__UBICACION__IdPro__70DDC3D8">
             <End Role="PROVINCIA" EntitySet="PROVINCIA" />
             <End Role="UBICACION" EntitySet="UBICACION" />
           </AssociationSet>
-          <AssociationSet Name="FK__VENTA__IdCliente__7D439ABD" Association="Self.FK__VENTA__IdCliente__7D439ABD">
+          <AssociationSet Name="FK__VENTA__IdCliente__6383C8BA" Association="Self.FK__VENTA__IdCliente__6383C8BA">
             <End Role="CLIENTE" EntitySet="CLIENTE" />
             <End Role="VENTA" EntitySet="VENTA" />
           </AssociationSet>
@@ -318,46 +319,22 @@
     <edmx:ConceptualModels>
       <Schema Namespace="DBCARRITOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DBCARRITOEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CARRITOes" EntityType="DBCARRITOModel.CARRITO" />
           <EntitySet Name="CATEGORIAs" EntityType="DBCARRITOModel.CATEGORIA" />
           <EntitySet Name="CLIENTEs" EntityType="DBCARRITOModel.CLIENTE" />
           <EntitySet Name="DEPARTAMENTOes" EntityType="DBCARRITOModel.DEPARTAMENTO" />
           <EntitySet Name="DETALLE_VENTA" EntityType="DBCARRITOModel.DETALLE_VENTA" />
           <EntitySet Name="DISTRITOes" EntityType="DBCARRITOModel.DISTRITO" />
+          <EntitySet Name="PRODUCTOes" EntityType="DBCARRITOModel.PRODUCTO" />
           <EntitySet Name="PROVINCIAs" EntityType="DBCARRITOModel.PROVINCIA" />
           <EntitySet Name="UBICACIONs" EntityType="DBCARRITOModel.UBICACION" />
           <EntitySet Name="USUARIOs" EntityType="DBCARRITOModel.USUARIO" />
           <EntitySet Name="VENTAs" EntityType="DBCARRITOModel.VENTA" />
-          <AssociationSet Name="FK__CLIENTE__IdUsuar__6754599E" Association="DBCARRITOModel.FK__CLIENTE__IdUsuar__6754599E">
-            <End Role="USUARIO" EntitySet="USUARIOs" />
-            <End Role="CLIENTE" EntitySet="CLIENTEs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__VENTA__IdCliente__7D439ABD" Association="DBCARRITOModel.FK__VENTA__IdCliente__7D439ABD">
-            <End Role="CLIENTE" EntitySet="CLIENTEs" />
-            <End Role="VENTA" EntitySet="VENTAs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__UBICACION__IdDep__76969D2E" Association="DBCARRITOModel.FK__UBICACION__IdDep__76969D2E">
-            <End Role="DEPARTAMENTO" EntitySet="DEPARTAMENTOes" />
-            <End Role="UBICACION" EntitySet="UBICACIONs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__DETALLE_V__IdVen__01142BA1" Association="DBCARRITOModel.FK__DETALLE_V__IdVen__01142BA1">
-            <End Role="VENTA" EntitySet="VENTAs" />
-            <End Role="DETALLE_VENTA" EntitySet="DETALLE_VENTA" />
-          </AssociationSet>
-          <AssociationSet Name="FK__UBICACION__IdDis__778AC167" Association="DBCARRITOModel.FK__UBICACION__IdDis__778AC167">
-            <End Role="DISTRITO" EntitySet="DISTRITOes" />
-            <End Role="UBICACION" EntitySet="UBICACIONs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__UBICACION__IdPro__75A278F5" Association="DBCARRITOModel.FK__UBICACION__IdPro__75A278F5">
-            <End Role="PROVINCIA" EntitySet="PROVINCIAs" />
-            <End Role="UBICACION" EntitySet="UBICACIONs" />
-          </AssociationSet>
-          <EntitySet Name="CARRITOes" EntityType="DBCARRITOModel.CARRITO" />
-          <AssociationSet Name="FK__CARRITO__IdClien__04E4BC85" Association="DBCARRITOModel.FK__CARRITO__IdClien__04E4BC85">
+          <AssociationSet Name="FK__CARRITO__IdClien__5FB337D6" Association="DBCARRITOModel.FK__CARRITO__IdClien__5FB337D6">
             <End Role="CLIENTE" EntitySet="CLIENTEs" />
             <End Role="CARRITO" EntitySet="CARRITOes" />
           </AssociationSet>
-          <EntitySet Name="PRODUCTOes" EntityType="DBCARRITOModel.PRODUCTO" />
-          <AssociationSet Name="FK__CARRITO__IdProdu__05D8E0BE" Association="DBCARRITOModel.FK__CARRITO__IdProdu__05D8E0BE">
+          <AssociationSet Name="FK__CARRITO__IdProdu__60A75C0F" Association="DBCARRITOModel.FK__CARRITO__IdProdu__60A75C0F">
             <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
             <End Role="CARRITO" EntitySet="CARRITOes" />
           </AssociationSet>
@@ -365,11 +342,46 @@
             <End Role="CATEGORIA" EntitySet="CATEGORIAs" />
             <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
           </AssociationSet>
-          <AssociationSet Name="FK__DETALLE_V__IdPro__02084FDA" Association="DBCARRITOModel.FK__DETALLE_V__IdPro__02084FDA">
+          <AssociationSet Name="FK__CLIENTE__IdUsuar__5AEE82B9" Association="DBCARRITOModel.FK__CLIENTE__IdUsuar__5AEE82B9">
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+            <End Role="CLIENTE" EntitySet="CLIENTEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VENTA__IdCliente__6383C8BA" Association="DBCARRITOModel.FK__VENTA__IdCliente__6383C8BA">
+            <End Role="CLIENTE" EntitySet="CLIENTEs" />
+            <End Role="VENTA" EntitySet="VENTAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UBICACION__IdDep__71D1E811" Association="DBCARRITOModel.FK__UBICACION__IdDep__71D1E811">
+            <End Role="DEPARTAMENTO" EntitySet="DEPARTAMENTOes" />
+            <End Role="UBICACION" EntitySet="UBICACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DETALLE_V__IdPro__68487DD7" Association="DBCARRITOModel.FK__DETALLE_V__IdPro__68487DD7">
             <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
             <End Role="DETALLE_VENTA" EntitySet="DETALLE_VENTA" />
           </AssociationSet>
+          <AssociationSet Name="FK__DETALLE_V__IdVen__6754599E" Association="DBCARRITOModel.FK__DETALLE_V__IdVen__6754599E">
+            <End Role="VENTA" EntitySet="VENTAs" />
+            <End Role="DETALLE_VENTA" EntitySet="DETALLE_VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UBICACION__IdDis__72C60C4A" Association="DBCARRITOModel.FK__UBICACION__IdDis__72C60C4A">
+            <End Role="DISTRITO" EntitySet="DISTRITOes" />
+            <End Role="UBICACION" EntitySet="UBICACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UBICACION__IdPro__70DDC3D8" Association="DBCARRITOModel.FK__UBICACION__IdPro__70DDC3D8">
+            <End Role="PROVINCIA" EntitySet="PROVINCIAs" />
+            <End Role="UBICACION" EntitySet="UBICACIONs" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="CARRITO">
+          <Key>
+            <PropertyRef Name="IdCarrito" />
+          </Key>
+          <Property Name="IdCarrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="Int32" />
+          <Property Name="IdProducto" Type="Int32" />
+          <Property Name="Cantidad" Type="Int32" />
+          <NavigationProperty Name="CLIENTE" Relationship="DBCARRITOModel.FK__CARRITO__IdClien__5FB337D6" FromRole="CARRITO" ToRole="CLIENTE" />
+          <NavigationProperty Name="PRODUCTO" Relationship="DBCARRITOModel.FK__CARRITO__IdProdu__60A75C0F" FromRole="CARRITO" ToRole="PRODUCTO" />
+        </EntityType>
         <EntityType Name="CATEGORIA">
           <Key>
             <PropertyRef Name="IdCategoria" />
@@ -392,9 +404,9 @@
           <Property Name="Contraseña" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Restablecer" Type="Boolean" />
           <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="USUARIO" Relationship="DBCARRITOModel.FK__CLIENTE__IdUsuar__6754599E" FromRole="CLIENTE" ToRole="USUARIO" />
-          <NavigationProperty Name="VENTAs" Relationship="DBCARRITOModel.FK__VENTA__IdCliente__7D439ABD" FromRole="CLIENTE" ToRole="VENTA" />
-          <NavigationProperty Name="CARRITOes" Relationship="DBCARRITOModel.FK__CARRITO__IdClien__04E4BC85" FromRole="CLIENTE" ToRole="CARRITO" />
+          <NavigationProperty Name="CARRITOes" Relationship="DBCARRITOModel.FK__CARRITO__IdClien__5FB337D6" FromRole="CLIENTE" ToRole="CARRITO" />
+          <NavigationProperty Name="USUARIO" Relationship="DBCARRITOModel.FK__CLIENTE__IdUsuar__5AEE82B9" FromRole="CLIENTE" ToRole="USUARIO" />
+          <NavigationProperty Name="VENTAs" Relationship="DBCARRITOModel.FK__VENTA__IdCliente__6383C8BA" FromRole="CLIENTE" ToRole="VENTA" />
         </EntityType>
         <EntityType Name="DEPARTAMENTO">
           <Key>
@@ -402,7 +414,7 @@
           </Key>
           <Property Name="IdDepartamento" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Descripcion_Departamento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="UBICACIONs" Relationship="DBCARRITOModel.FK__UBICACION__IdDep__76969D2E" FromRole="DEPARTAMENTO" ToRole="UBICACION" />
+          <NavigationProperty Name="UBICACIONs" Relationship="DBCARRITOModel.FK__UBICACION__IdDep__71D1E811" FromRole="DEPARTAMENTO" ToRole="UBICACION" />
         </EntityType>
         <EntityType Name="DETALLE_VENTA">
           <Key>
@@ -413,8 +425,8 @@
           <Property Name="IdProducto" Type="Int32" />
           <Property Name="Cantidad" Type="Int32" />
           <Property Name="Total" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="VENTA" Relationship="DBCARRITOModel.FK__DETALLE_V__IdVen__01142BA1" FromRole="DETALLE_VENTA" ToRole="VENTA" />
-          <NavigationProperty Name="PRODUCTO" Relationship="DBCARRITOModel.FK__DETALLE_V__IdPro__02084FDA" FromRole="DETALLE_VENTA" ToRole="PRODUCTO" />
+          <NavigationProperty Name="PRODUCTO" Relationship="DBCARRITOModel.FK__DETALLE_V__IdPro__68487DD7" FromRole="DETALLE_VENTA" ToRole="PRODUCTO" />
+          <NavigationProperty Name="VENTA" Relationship="DBCARRITOModel.FK__DETALLE_V__IdVen__6754599E" FromRole="DETALLE_VENTA" ToRole="VENTA" />
         </EntityType>
         <EntityType Name="DISTRITO">
           <Key>
@@ -422,168 +434,8 @@
           </Key>
           <Property Name="IdDistrito" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Descripcion_Distrito" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="UBICACIONs" Relationship="DBCARRITOModel.FK__UBICACION__IdDis__778AC167" FromRole="DISTRITO" ToRole="UBICACION" />
+          <NavigationProperty Name="UBICACIONs" Relationship="DBCARRITOModel.FK__UBICACION__IdDis__72C60C4A" FromRole="DISTRITO" ToRole="UBICACION" />
         </EntityType>
-        <EntityType Name="PROVINCIA">
-          <Key>
-            <PropertyRef Name="IdProvincia" />
-          </Key>
-          <Property Name="IdProvincia" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Descripcion_Provincia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="UBICACIONs" Relationship="DBCARRITOModel.FK__UBICACION__IdPro__75A278F5" FromRole="PROVINCIA" ToRole="UBICACION" />
-        </EntityType>
-        <EntityType Name="UBICACION">
-          <Key>
-            <PropertyRef Name="IdUbicacion" />
-          </Key>
-          <Property Name="IdUbicacion" Type="Int32" Nullable="false" />
-          <Property Name="IdProvincia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="IdDepartamento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="IdDistrito" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Direccion_Exacta" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="DEPARTAMENTO" Relationship="DBCARRITOModel.FK__UBICACION__IdDep__76969D2E" FromRole="UBICACION" ToRole="DEPARTAMENTO" />
-          <NavigationProperty Name="DISTRITO" Relationship="DBCARRITOModel.FK__UBICACION__IdDis__778AC167" FromRole="UBICACION" ToRole="DISTRITO" />
-          <NavigationProperty Name="PROVINCIA" Relationship="DBCARRITOModel.FK__UBICACION__IdPro__75A278F5" FromRole="UBICACION" ToRole="PROVINCIA" />
-        </EntityType>
-        <EntityType Name="USUARIO">
-          <Key>
-            <PropertyRef Name="IdUsuario" />
-          </Key>
-          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Contraseña" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="Restablecer" Type="Boolean" />
-          <Property Name="Activo" Type="Boolean" />
-          <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="CLIENTEs" Relationship="DBCARRITOModel.FK__CLIENTE__IdUsuar__6754599E" FromRole="USUARIO" ToRole="CLIENTE" />
-        </EntityType>
-        <EntityType Name="VENTA">
-          <Key>
-            <PropertyRef Name="IdVenta" />
-          </Key>
-          <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdCliente" Type="Int32" />
-          <Property Name="TotalProducto" Type="Int32" />
-          <Property Name="MontoTotal" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="Contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Direccion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="IdUbicacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="FechaVenta" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="CLIENTE" Relationship="DBCARRITOModel.FK__VENTA__IdCliente__7D439ABD" FromRole="VENTA" ToRole="CLIENTE" />
-          <NavigationProperty Name="DETALLE_VENTA" Relationship="DBCARRITOModel.FK__DETALLE_V__IdVen__01142BA1" FromRole="VENTA" ToRole="DETALLE_VENTA" />
-        </EntityType>
-        <Association Name="FK__CLIENTE__IdUsuar__6754599E">
-          <End Type="DBCARRITOModel.USUARIO" Role="USUARIO" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="DBCARRITOModel.CLIENTE" Role="CLIENTE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USUARIO">
-              <PropertyRef Name="IdUsuario" />
-            </Principal>
-            <Dependent Role="CLIENTE">
-              <PropertyRef Name="IdUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__VENTA__IdCliente__7D439ABD">
-          <End Type="DBCARRITOModel.CLIENTE" Role="CLIENTE" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="DBCARRITOModel.VENTA" Role="VENTA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CLIENTE">
-              <PropertyRef Name="IdCliente" />
-            </Principal>
-            <Dependent Role="VENTA">
-              <PropertyRef Name="IdCliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__UBICACION__IdDep__76969D2E">
-          <End Type="DBCARRITOModel.DEPARTAMENTO" Role="DEPARTAMENTO" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="DBCARRITOModel.UBICACION" Role="UBICACION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DEPARTAMENTO">
-              <PropertyRef Name="IdDepartamento" />
-            </Principal>
-            <Dependent Role="UBICACION">
-              <PropertyRef Name="IdDepartamento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__DETALLE_V__IdVen__01142BA1">
-          <End Type="DBCARRITOModel.VENTA" Role="VENTA" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="DBCARRITOModel.DETALLE_VENTA" Role="DETALLE_VENTA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="VENTA">
-              <PropertyRef Name="IdVenta" />
-            </Principal>
-            <Dependent Role="DETALLE_VENTA">
-              <PropertyRef Name="IdVenta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__UBICACION__IdDis__778AC167">
-          <End Type="DBCARRITOModel.DISTRITO" Role="DISTRITO" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="DBCARRITOModel.UBICACION" Role="UBICACION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DISTRITO">
-              <PropertyRef Name="IdDistrito" />
-            </Principal>
-            <Dependent Role="UBICACION">
-              <PropertyRef Name="IdDistrito" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__UBICACION__IdPro__75A278F5">
-          <End Type="DBCARRITOModel.PROVINCIA" Role="PROVINCIA" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="DBCARRITOModel.UBICACION" Role="UBICACION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PROVINCIA">
-              <PropertyRef Name="IdProvincia" />
-            </Principal>
-            <Dependent Role="UBICACION">
-              <PropertyRef Name="IdProvincia" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="CARRITO">
-          <Key>
-            <PropertyRef Name="IdCarrito" />
-          </Key>
-          <Property Name="IdCarrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdCliente" Type="Int32" />
-          <Property Name="IdProducto" Type="Int32" />
-          <Property Name="Cantidad" Type="Int32" />
-          <NavigationProperty Name="CLIENTE" Relationship="DBCARRITOModel.FK__CARRITO__IdClien__04E4BC85" FromRole="CARRITO" ToRole="CLIENTE" />
-          <NavigationProperty Name="PRODUCTO" Relationship="DBCARRITOModel.FK__CARRITO__IdProdu__05D8E0BE" FromRole="CARRITO" ToRole="PRODUCTO" />
-        </EntityType>
-        <Association Name="FK__CARRITO__IdClien__04E4BC85">
-          <End Type="DBCARRITOModel.CLIENTE" Role="CLIENTE" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="DBCARRITOModel.CARRITO" Role="CARRITO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CLIENTE">
-              <PropertyRef Name="IdCliente" />
-            </Principal>
-            <Dependent Role="CARRITO">
-              <PropertyRef Name="IdCliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="PRODUCTO">
           <Key>
             <PropertyRef Name="IdProducto" />
@@ -599,11 +451,77 @@
           <Property Name="NombreImagen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Activo" Type="Boolean" />
           <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="CARRITOes" Relationship="DBCARRITOModel.FK__CARRITO__IdProdu__05D8E0BE" FromRole="PRODUCTO" ToRole="CARRITO" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="CARRITOes" Relationship="DBCARRITOModel.FK__CARRITO__IdProdu__60A75C0F" FromRole="PRODUCTO" ToRole="CARRITO" />
           <NavigationProperty Name="CATEGORIA" Relationship="DBCARRITOModel.FK__PRODUCTO__IdCate__4D94879B" FromRole="PRODUCTO" ToRole="CATEGORIA" />
-          <NavigationProperty Name="DETALLE_VENTA" Relationship="DBCARRITOModel.FK__DETALLE_V__IdPro__02084FDA" FromRole="PRODUCTO" ToRole="DETALLE_VENTA" />
+          <NavigationProperty Name="DETALLE_VENTA" Relationship="DBCARRITOModel.FK__DETALLE_V__IdPro__68487DD7" FromRole="PRODUCTO" ToRole="DETALLE_VENTA" />
         </EntityType>
-        <Association Name="FK__CARRITO__IdProdu__05D8E0BE">
+        <EntityType Name="PROVINCIA">
+          <Key>
+            <PropertyRef Name="IdProvincia" />
+          </Key>
+          <Property Name="IdProvincia" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion_Provincia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UBICACIONs" Relationship="DBCARRITOModel.FK__UBICACION__IdPro__70DDC3D8" FromRole="PROVINCIA" ToRole="UBICACION" />
+        </EntityType>
+        <EntityType Name="UBICACION">
+          <Key>
+            <PropertyRef Name="IdUbicacion" />
+          </Key>
+          <Property Name="IdUbicacion" Type="Int32" Nullable="false" />
+          <Property Name="IdProvincia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IdDepartamento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IdDistrito" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion_Exacta" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DEPARTAMENTO" Relationship="DBCARRITOModel.FK__UBICACION__IdDep__71D1E811" FromRole="UBICACION" ToRole="DEPARTAMENTO" />
+          <NavigationProperty Name="DISTRITO" Relationship="DBCARRITOModel.FK__UBICACION__IdDis__72C60C4A" FromRole="UBICACION" ToRole="DISTRITO" />
+          <NavigationProperty Name="PROVINCIA" Relationship="DBCARRITOModel.FK__UBICACION__IdPro__70DDC3D8" FromRole="UBICACION" ToRole="PROVINCIA" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Contraseña" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Restablecer" Type="Boolean" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CLIENTEs" Relationship="DBCARRITOModel.FK__CLIENTE__IdUsuar__5AEE82B9" FromRole="USUARIO" ToRole="CLIENTE" />
+        </EntityType>
+        <EntityType Name="VENTA">
+          <Key>
+            <PropertyRef Name="IdVenta" />
+          </Key>
+          <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="Int32" />
+          <Property Name="TotalProducto" Type="Int32" />
+          <Property Name="MontoTotal" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IdUbicacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FechaVenta" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CLIENTE" Relationship="DBCARRITOModel.FK__VENTA__IdCliente__6383C8BA" FromRole="VENTA" ToRole="CLIENTE" />
+          <NavigationProperty Name="DETALLE_VENTA" Relationship="DBCARRITOModel.FK__DETALLE_V__IdVen__6754599E" FromRole="VENTA" ToRole="DETALLE_VENTA" />
+        </EntityType>
+        <Association Name="FK__CARRITO__IdClien__5FB337D6">
+          <End Type="DBCARRITOModel.CLIENTE" Role="CLIENTE" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBCARRITOModel.CARRITO" Role="CARRITO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="CARRITO">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CARRITO__IdProdu__60A75C0F">
           <End Type="DBCARRITOModel.PRODUCTO" Role="PRODUCTO" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -631,7 +549,49 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DETALLE_V__IdPro__02084FDA">
+        <Association Name="FK__CLIENTE__IdUsuar__5AEE82B9">
+          <End Type="DBCARRITOModel.USUARIO" Role="USUARIO" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBCARRITOModel.CLIENTE" Role="CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VENTA__IdCliente__6383C8BA">
+          <End Type="DBCARRITOModel.CLIENTE" Role="CLIENTE" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBCARRITOModel.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UBICACION__IdDep__71D1E811">
+          <End Type="DBCARRITOModel.DEPARTAMENTO" Role="DEPARTAMENTO" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBCARRITOModel.UBICACION" Role="UBICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTAMENTO">
+              <PropertyRef Name="IdDepartamento" />
+            </Principal>
+            <Dependent Role="UBICACION">
+              <PropertyRef Name="IdDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DETALLE_V__IdPro__68487DD7">
           <End Type="DBCARRITOModel.PRODUCTO" Role="PRODUCTO" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -645,12 +605,64 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK__DETALLE_V__IdVen__6754599E">
+          <End Type="DBCARRITOModel.VENTA" Role="VENTA" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBCARRITOModel.DETALLE_VENTA" Role="DETALLE_VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VENTA">
+              <PropertyRef Name="IdVenta" />
+            </Principal>
+            <Dependent Role="DETALLE_VENTA">
+              <PropertyRef Name="IdVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UBICACION__IdDis__72C60C4A">
+          <End Type="DBCARRITOModel.DISTRITO" Role="DISTRITO" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBCARRITOModel.UBICACION" Role="UBICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DISTRITO">
+              <PropertyRef Name="IdDistrito" />
+            </Principal>
+            <Dependent Role="UBICACION">
+              <PropertyRef Name="IdDistrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UBICACION__IdPro__70DDC3D8">
+          <End Type="DBCARRITOModel.PROVINCIA" Role="PROVINCIA" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBCARRITOModel.UBICACION" Role="UBICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVINCIA">
+              <PropertyRef Name="IdProvincia" />
+            </Principal>
+            <Dependent Role="UBICACION">
+              <PropertyRef Name="IdProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DBCARRITOModelStoreContainer" CdmEntityContainer="DBCARRITOEntities">
+          <EntitySetMapping Name="CARRITOes">
+            <EntityTypeMapping TypeName="DBCARRITOModel.CARRITO">
+              <MappingFragment StoreEntitySet="CARRITO">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdCarrito" ColumnName="IdCarrito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CATEGORIAs">
             <EntityTypeMapping TypeName="DBCARRITOModel.CATEGORIA">
               <MappingFragment StoreEntitySet="CATEGORIA">
@@ -702,6 +714,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTOes">
+            <EntityTypeMapping TypeName="DBCARRITOModel.PRODUCTO">
+              <MappingFragment StoreEntitySet="PRODUCTO">
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="NombreImagen" ColumnName="NombreImagen" />
+                <ScalarProperty Name="RutaImagen" ColumnName="RutaImagen" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PROVINCIAs">
             <EntityTypeMapping TypeName="DBCARRITOModel.PROVINCIA">
               <MappingFragment StoreEntitySet="PROVINCIA">
@@ -747,33 +777,6 @@
                 <ScalarProperty Name="TotalProducto" ColumnName="TotalProducto" />
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
                 <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CARRITOes">
-            <EntityTypeMapping TypeName="DBCARRITOModel.CARRITO">
-              <MappingFragment StoreEntitySet="CARRITO">
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
-                <ScalarProperty Name="IdCarrito" ColumnName="IdCarrito" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PRODUCTOes">
-            <EntityTypeMapping TypeName="DBCARRITOModel.PRODUCTO">
-              <MappingFragment StoreEntitySet="PRODUCTO">
-                <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
-                <ScalarProperty Name="Activo" ColumnName="Activo" />
-                <ScalarProperty Name="NombreImagen" ColumnName="NombreImagen" />
-                <ScalarProperty Name="RutaImagen" ColumnName="RutaImagen" />
-                <ScalarProperty Name="Stock" ColumnName="Stock" />
-                <ScalarProperty Name="Precio" ColumnName="Precio" />
-                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
-                <ScalarProperty Name="Marca" ColumnName="Marca" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

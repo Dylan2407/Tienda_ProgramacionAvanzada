@@ -1,0 +1,67 @@
+﻿@model CursoWeb2.Models.PRODUCTO
+
+@{
+    ViewBag.Title = "Editar Producto";
+}
+
+<h2>Editar Producto</h2>
+
+@using (Html.BeginForm("Editar", "Producto", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m => m.IdProducto)
+
+    <div class="form-group">
+        <label>Nombre:</label>
+        @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Descripción:</label>
+        @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Marca:</label>
+        @Html.TextBoxFor(m => m.Marca, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Categoría:</label>
+        @Html.DropDownListFor(m => m.IdCategoria, (SelectList)ViewBag.Categorias, "Seleccione una categoría", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Precio:</label>
+        @Html.TextBoxFor(m => m.Precio, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Stock:</label>
+        @Html.TextBoxFor(m => m.Stock, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Ruta de Imagen:</label>
+        @Html.TextBoxFor(m => m.RutaImagen, new { @class = "form-control", @readonly = "readonly" })
+        <small class="form-text text-muted">Esta es la ruta de la imagen actualmente almacenada.</small>
+    </div>
+
+
+    <div class="form-group">
+        <label>Nombre de Imagen:</label>
+        @Html.TextBoxFor(m => m.NombreImagen, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group form-check">
+        @Html.CheckBox("Activo", Model.Activo ?? true)
+        @Html.LabelFor(m => m.Activo, "Activo", new { @class = "form-check-label" })
+    </div>
+
+    <div class="form-group">
+        <label>Actualizar Imagen:</label>
+        <input type="file" name="ImagenFile" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar cambios</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+}

@@ -20,7 +20,7 @@ namespace CursoWeb2.Models
         public Nullable<int> Cantidad { get; set; }
         public Nullable<decimal> Total { get; set; }
     
-        public virtual VENTA VENTA { get; set; }
         public virtual PRODUCTO PRODUCTO { get; set; }
+        public virtual VENTA VENTA { get; set; }
     }
 }

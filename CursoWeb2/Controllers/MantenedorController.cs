@@ -13,7 +13,7 @@ namespace CursoWeb2.Controllers
         {
             DBCARRITOEntities oDatos = new DBCARRITOEntities();
 
-            return View(oDatos.CATEGORIAs.ToList());
+            return View(oDatos.CATEGORIA.ToList());
         }
 
         public ActionResult Marca()
@@ -28,7 +28,7 @@ namespace CursoWeb2.Controllers
         {
             using (DBCARRITOEntities oDatos = new DBCARRITOEntities())
             {
-                return View(oDatos.PRODUCTOes.ToList());
+                return View(oDatos.PRODUCTO.ToList());
             }
         }
         
@@ -44,7 +44,7 @@ namespace CursoWeb2.Controllers
         {
             using (DBCARRITOEntities oDatos = new DBCARRITOEntities())
             {
-                var verify = oDatos.PRODUCTOes.FirstOrDefault(p => p.IdProducto == producto.IdProducto);
+                var verify = oDatos.PRODUCTO.FirstOrDefault(p => p.IdProducto == producto.IdProducto);
                 if (verify != null)
                 {
                     return RedirectToAction("Productos", "Producto");
@@ -62,7 +62,7 @@ namespace CursoWeb2.Controllers
                     
                 };
 
-                oDatos.PRODUCTOes.Add(nuevoProducto);
+                oDatos.PRODUCTO.Add(nuevoProducto);
                 oDatos.SaveChanges();
             }
             return RedirectToAction("Productos", "Producto");

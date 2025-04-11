@@ -25,16 +25,16 @@ namespace CursoWeb2.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<CATEGORIA> CATEGORIAs { get; set; }
-        public DbSet<CLIENTE> CLIENTEs { get; set; }
-        public DbSet<DEPARTAMENTO> DEPARTAMENTOes { get; set; }
+        public DbSet<CARRITO> CARRITO { get; set; }
+        public DbSet<CATEGORIA> CATEGORIA { get; set; }
+        public DbSet<CLIENTE> CLIENTE { get; set; }
+        public DbSet<DEPARTAMENTO> DEPARTAMENTO { get; set; }
         public DbSet<DETALLE_VENTA> DETALLE_VENTA { get; set; }
-        public DbSet<DISTRITO> DISTRITOes { get; set; }
-        public DbSet<PROVINCIA> PROVINCIAs { get; set; }
-        public DbSet<UBICACION> UBICACIONs { get; set; }
-        public DbSet<USUARIO> USUARIOs { get; set; }
-        public DbSet<VENTA> VENTAs { get; set; }
-        public DbSet<CARRITO> CARRITOes { get; set; }
-        public DbSet<PRODUCTO> PRODUCTOes { get; set; }
+        public DbSet<DISTRITO> DISTRITO { get; set; }
+        public DbSet<PRODUCTO> PRODUCTO { get; set; }
+        public DbSet<PROVINCIA> PROVINCIA { get; set; }
+        public DbSet<UBICACION> UBICACION { get; set; }
+        public DbSet<USUARIO> USUARIO { get; set; }
+        public DbSet<VENTA> VENTA { get; set; }
     }
 }

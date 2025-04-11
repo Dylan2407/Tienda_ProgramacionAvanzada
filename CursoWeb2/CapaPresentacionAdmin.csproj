@@ -129,6 +129,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogeoController.cs" />
     <Compile Include="Controllers\MantenedorController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -542,6 +543,9 @@
     <Content Include="Views\Logeo\Logeo.cshtml" />
     <Content Include="Views\Home\CrearUsuario.cshtml" />
     <Content Include="Views\Mantenedor\CrearProducto.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Producto\Agregar.cshtml" />
+    <Content Include="Views\Producto\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

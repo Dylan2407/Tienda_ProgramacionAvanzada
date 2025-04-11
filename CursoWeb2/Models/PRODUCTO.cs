@@ -31,6 +31,7 @@ namespace CursoWeb2.Models
         public string NombreImagen { get; set; }
         public Nullable<bool> Activo { get; set; }
         public Nullable<System.DateTime> FechaRegistro { get; set; }
+        public byte[] Imagen { get; set; }
     
         public virtual ICollection<CARRITO> CARRITOes { get; set; }
         public virtual CATEGORIA CATEGORIA { get; set; }

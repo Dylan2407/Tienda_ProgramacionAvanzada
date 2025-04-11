@@ -20,7 +20,7 @@ namespace CursoWeb2.Controllers
         public ActionResult Logeo(Login login)
         {
             DBCARRITOEntities entidad = new DBCARRITOEntities();
-            USUARIO user = entidad.USUARIOs.FirstOrDefault(u => u.Correo == login.Correo);
+            USUARIO user = entidad.USUARIO.FirstOrDefault(u => u.Correo == login.Correo);
 
             if (this.verificar(login.Correo, login.Contraseña))
             {
@@ -74,7 +74,7 @@ namespace CursoWeb2.Controllers
         {
             bool autorizar = false;
             DBCARRITOEntities entidad = new DBCARRITOEntities();
-            USUARIO user = entidad.USUARIOs.FirstOrDefault(m => m.Correo == email);
+            USUARIO user = entidad.USUARIO.FirstOrDefault(m => m.Correo == email);
             if (user != null)
             {
                 if (user.Contraseña.Equals(pass))

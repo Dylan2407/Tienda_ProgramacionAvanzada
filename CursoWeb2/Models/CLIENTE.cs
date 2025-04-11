@@ -16,8 +16,8 @@ namespace CursoWeb2.Models
     {
         public CLIENTE()
         {
-            this.VENTAs = new HashSet<VENTA>();
             this.CARRITOes = new HashSet<CARRITO>();
+            this.VENTAs = new HashSet<VENTA>();
         }
     
         public int IdCliente { get; set; }
@@ -29,8 +29,8 @@ namespace CursoWeb2.Models
         public Nullable<bool> Restablecer { get; set; }
         public Nullable<System.DateTime> FechaRegistro { get; set; }
     
+        public virtual ICollection<CARRITO> CARRITOes { get; set; }
         public virtual USUARIO USUARIO { get; set; }
         public virtual ICollection<VENTA> VENTAs { get; set; }
-        public virtual ICollection<CARRITO> CARRITOes { get; set; }
     }
 }

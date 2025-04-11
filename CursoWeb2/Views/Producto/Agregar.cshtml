@@ -1,0 +1,59 @@
+﻿@model CursoWeb2.Models.PRODUCTO
+@{
+    ViewBag.Title = "Registrar Nuevo Producto";
+}
+
+<h2>Registrar Nuevo Producto</h2>
+
+@using (Html.BeginForm("Agregar", "Producto", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label>Nombre:</label>
+        @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", placeholder = "Ingrese el nombre del producto" })
+    </div>
+
+    <div class="form-group">
+        <label>Descripción:</label>
+        @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control", placeholder = "Ingrese la descripción del producto" })
+    </div>
+
+    <div class="form-group">
+        <label>Marca:</label>
+        @Html.TextBoxFor(m => m.Marca, new { @class = "form-control", placeholder = "Ingrese la marca del producto" })
+    </div>
+
+    <div class="form-group">
+        <label>Categoría:</label>
+        @Html.DropDownListFor(m => m.IdCategoria, (SelectList)ViewBag.Categorias, "Seleccione una categoría", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Precio:</label>
+        @Html.TextBoxFor(m => m.Precio, new { @class = "form-control", placeholder = "Ingrese el precio del producto" })
+    </div>
+
+    <div class="form-group">
+        <label>Stock:</label>
+        @Html.TextBoxFor(m => m.Stock, new { @class = "form-control", placeholder = "Ingrese el stock disponible" })
+    </div>
+
+    <div class="form-group">
+        <label>Nombre de Imagen:</label>
+        @Html.TextBoxFor(m => m.NombreImagen, new { @class = "form-control", placeholder = "Ingrese el nombre de la imagen" })
+    </div>
+
+    <div class="form-group form-check">
+
+        @Html.CheckBox("Activo", Model.Activo ?? true)
+        @Html.LabelFor(m => m.Activo, "Activo", new { @class = "form-check-label" })
+    </div>
+
+    <div class="form-group">
+        <label>Imagen:</label>
+        <input type="file" name="ImagenFile" class="form-control" />
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a href="@Url.Action("Index", "Producto")" class="btn btn-secondary">Cancelar</a>
+}

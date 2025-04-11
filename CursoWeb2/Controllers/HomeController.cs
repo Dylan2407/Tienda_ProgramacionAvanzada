@@ -45,7 +45,7 @@ namespace CapaPresentacionAdmin.Controllers
             {
                 DBCARRITOEntities oDatos = new DBCARRITOEntities();
 
-                return View(oDatos.USUARIOs.ToList());
+                return View(oDatos.USUARIO.ToList());
 
             }
         }
@@ -62,7 +62,7 @@ namespace CapaPresentacionAdmin.Controllers
             using (DBCARRITOEntities oDatos = new DBCARRITOEntities())
 
             {
-                var usuario = oDatos.USUARIOs.FirstOrDefault(u => u.IdUsuario == id);
+                var usuario = oDatos.USUARIO.FirstOrDefault(u => u.IdUsuario == id);
 
                 if (usuario == null)
                 {
@@ -79,14 +79,14 @@ namespace CapaPresentacionAdmin.Controllers
         {
             using (DBCARRITOEntities oDatos = new DBCARRITOEntities())
             {
-                var usuarioEliminar = oDatos.USUARIOs.FirstOrDefault(u => u.IdUsuario == usuario.IdUsuario);
+                var usuarioEliminar = oDatos.USUARIO.FirstOrDefault(u => u.IdUsuario == usuario.IdUsuario);
 
                 if (usuarioEliminar == null)
                 {
                     return HttpNotFound();
                 }
 
-                oDatos.USUARIOs.Remove(usuarioEliminar); 
+                oDatos.USUARIO.Remove(usuarioEliminar); 
                 oDatos.SaveChanges(); 
             }
 
@@ -105,7 +105,7 @@ namespace CapaPresentacionAdmin.Controllers
 
             using (DBCARRITOEntities oDatos = new DBCARRITOEntities())
             {
-                var usuario = oDatos.USUARIOs.FirstOrDefault(u => u.IdUsuario == id);
+                var usuario = oDatos.USUARIO.FirstOrDefault(u => u.IdUsuario == id);
                 if (usuario == null)
                 {
                     return HttpNotFound();
@@ -118,7 +118,7 @@ namespace CapaPresentacionAdmin.Controllers
         {
             using (DBCARRITOEntities oDatos = new DBCARRITOEntities())
             {
-                var usuario = oDatos.USUARIOs.FirstOrDefault(u => u.IdUsuario == perfil.IdUsuario);
+                var usuario = oDatos.USUARIO.FirstOrDefault(u => u.IdUsuario == perfil.IdUsuario);
                 if (usuario == null)
                 {
                     return HttpNotFound();
@@ -149,7 +149,7 @@ namespace CapaPresentacionAdmin.Controllers
             DBCARRITOEntities oDatos = new DBCARRITOEntities();
 
             //Verificacion de Datos usuarios
-            var verify = oDatos.USUARIOs.FirstOrDefault(m => m.IdUsuario == perfil.IdUsuario);// esto verifica que no sean replicados en la base de datos 
+            var verify = oDatos.USUARIO.FirstOrDefault(m => m.IdUsuario == perfil.IdUsuario);// esto verifica que no sean replicados en la base de datos 
 
             // m=>m arrow funtion(funcion de flecha) esto significa que por cada uno en este caso usuario en "Usuarios", que verifique todos lo usuarios a ver si hay alguno que se parece al dato que le enviamos por parametro
 
@@ -167,7 +167,7 @@ namespace CapaPresentacionAdmin.Controllers
             nuevoUsuario.Activo = perfil.Activo;
 
             //Se guarda en la base de datos
-            oDatos.USUARIOs.Add(nuevoUsuario);
+            oDatos.USUARIO.Add(nuevoUsuario);
             oDatos.SaveChanges();
 
             return RedirectToAction("Usuarios", "Home");
